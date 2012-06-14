@@ -1,0 +1,252 @@
+@font-face { font-family: 'Times-New-Roman'; src: url('data:font/woff;charset=utf-8;base64,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') format('woff');
+ } 
+
+
+
+@media (min-width:320px) {
+	html {
+		height: 100%;
+		width:100%;
+	}
+
+	body {
+		margin:0; 
+		padding:0;
+		height: 100%;
+		position: relative;
+		width:100%;
+		/*temp*/
+		color:#fff;
+		min-height: 418px;
+		font-size:10px;
+	}
+
+	#menu-button {
+		background:url(../img/logo.png) no-repeat;
+		display: block;
+		width:50px;
+		height:50px;
+		box-shadow: 0 0 8px rgba(0,0,0,.5);
+
+		/*test*/
+		position: absolute;
+		top:5px;
+		right:5px;
+		z-index:2;
+
+		/*more performant approach to hiding text?*/
+		line-height:0; 
+	    font-size:0;
+	    color:transparent; 
+
+
+		/*temp*/
+		-webkit-user-select: none;                /* disable cut copy paste */
+		-webkit-touch-callout: none;              /* disable callout, image save panel */
+		-webkit-tap-highlight-color: transparent; /* "turn off" link highlight */
+	}
+
+	#menu-button:active {
+		
+	}
+
+	#cover {
+		width:100%;
+		height:100%;
+		background:#ccc;
+		background: -webkit-linear-gradient(top, #ddd 0%, #aaa 100%); /* Chrome10+,Safari5.*/
+		/*test*/
+		position: absolute;
+		top:0;
+		left:0;
+		z-index:1;
+
+		/*needs to be in the html*/
+		
+		background: url(../img/portrait_full_sm.png) no-repeat center center;
+		background-color:#ccc;
+		background-size:cover;
+
+		/*need faux shadow on right side?*/
+		box-shadow: 10px 0px 10px rgba(0,0,0,.3);
+
+		/*transitions*/
+		-webkit-transition: left .3s cubic-bezier(.54, .16, .57, .88);
+	}
+
+	#cover.active {
+		left:-80px;	
+	}
+
+	#title {
+		display:block;
+		background:url(../img/clint-eastwood-phone.png) no-repeat;
+		width:300px;
+		height:150px;
+		margin:10px 10px 0;
+		background-size:contain;
+		padding:0;
+		position:relative;
+		/*more performant approach to hiding text?*/
+		line-height:0; 
+	    font-size:0;
+	    color:transparent; 
+	}
+
+	#title #date {
+		position: absolute;
+		bottom:0;
+	}
+
+	#title-text {
+		width:95%;
+		color:#ca0016;
+		margin:10px auto;
+		display:block;
+		padding:0;
+	}
+
+
+	#first-name, #last-name {
+		opacity:0;
+		font-family:'Times-New-Roman';
+		display: block;
+		text-transform:uppercase;
+		font-size:12px;
+		padding:1px;
+		text-align: center;
+		margin:0 auto;
+		line-height:1.5;
+		text-shadow:0 1px 2px rgba(0,0,0,.3);
+		white-space: nowrap;
+	}
+	#first-name.resized, #last-name.resized {
+		opacity:1;
+	}
+
+	#date {
+		font-family:Helvetica, sans-serif;
+		font-weight:bold;
+		color:#efefef;
+		margin-top:5px;
+		font-size:12px;
+		text-shadow:0 1px 2px rgba(0,0,0,.7);
+	}
+
+	#nav {
+		padding:0;
+		margin:0;
+		background-color:#cd212b;
+		width:90px;
+		height:100%;
+
+		/*test*/
+		position: absolute;
+		top:0;
+		right:0;
+		z-index:0;
+	}
+
+	#nav li {
+		display:none;
+	}
+
+
+	#content {
+		/*test*/
+		position: absolute;
+		width:100%;
+		left:0;
+		bottom:0;
+	}
+
+	#pullquote, #links {
+		padding:5px 10px;
+	}
+
+	#pullquote {
+		display: block;
+		margin-bottom:10px;
+		font-size:28px;
+		font-family:Helvetica, sans-serif;
+		font-weight:bold;
+		text-shadow:0 1px 2px #000;
+		
+	}
+
+	#links {
+		font-size:11px;
+		text-transform:uppercase;
+		font-family:Helvetica, sans-serif;
+		font-weight:bold;
+		box-sizing:border-box;
+		margin:0;
+		width:100%;
+
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAIAAhQCBx/kPfQAAAABJRU5ErkJggg==);
+		
+		/*replace with image*/
+		border-top:1px solid rgba(40,40,40,.4);
+		
+		/*clearfix*/
+		display:inline-table;
+	}
+
+	#link-left, #link-right {
+		width:47%;
+	}
+
+	#link-left {
+		float:left;
+	}
+
+	#link-right {
+		float:right;
+	}
+
+	#links a {
+		color:#ca0016;
+	}
+}
+
+@media (min-width: 768px) {
+	#title {
+		background:url(../img/clint-eastwood-tablet.png) no-repeat;
+		width:640px;
+		height:274px;
+		margin:10px auto;
+		position:relative;
+	}
+	#title #date {
+		position: absolute;
+		bottom:0;
+	}
+
+	#title-text {
+		margin-top:20px;
+		width:70%;
+	}
+	#date {
+		margin-top:20px;
+	}
+	#first-name, #last-name {
+		line-height:1.6;
+	}
+
+	#cover {		
+		background: url(../img/portrait_full.jpg) no-repeat center center;
+	}
+	#pullquote, #links {
+		padding:10px 20px;
+	}
+	#pullquote {
+		font-size:56px;
+		width:60%;
+		margin-bottom:20px;
+	}
+	#links {
+		font-size:16px;
+		font-weight:normal;
+		padding:20px;
+	}
+}

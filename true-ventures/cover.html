@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<script>
+	window.addEventListener("load",function() {
+	   setTimeout(function(){
+	    window.scrollTo(0, 0);
+	    }, 0);
+	 });
+	</script>
+</head>
+<body>
+	<a id="menu-button">Menu</a>
+	<div id="cover">
+		<header id="title-text">
+			<span id="first-name">True</span><span id="last-name">Ventures</span>
+			<div id="date">April 2012</div>
+		</header>
+		<div id="content">
+			<a id="pullquote">Startups win at SXSW</a>
+			<p id="aside"><a href="#">@trueventures</a> Don&#8217;t fear your data! <a href="#">@metamx</a> on bringing data to the people <a href="#">http://tru.vc/zLyMUW</a></p>
+		</div>
+	</div>
+	<ul id="nav">
+		<li id="nav-news">Timeline</li>
+		<li id="nav-photos">Photos</li>
+		<li id="nav-videos">Videos</li>
+		<li id="nav-bio">Bio</li>
+		<li id="nav-contact">Contact</li>
+	</ul>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/jquery.resizer.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(window).bind('load', function() {
+			$('#first-name, #last-name').textresizer({width:$('#title-text').width()});
+		})
+	</script>
+</body>
+</html>
