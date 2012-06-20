@@ -16,8 +16,9 @@
 	<a id="menu-button">Menu</a>
 	<div id="cover">
 		<header id="title-text">
-			<span id="first-name">Hammer</span>
-			<div id="date">April 2012</div>
+			<span id="first-name">MC</span>
+			<span id="last-name">Hammer</span>
+			<span id="date">April 2012</span>
 		</header>
 		<div id="content">
 			<p id="pullquote">My friend&#8217;s sons are putting on a benefit concert for Trevor Project June 23rd in SF - great cause, fun event: <a href="#">http://bit.ly/a69sg6</a></p>
@@ -26,8 +27,8 @@
 	<ul id="nav">
 		<li id="nav-news">News</li>
 		<li id="nav-photos">Photos</li>
-		<li id="nav-videos">Videos</li>
-		<li id="nav-bio">Bio</li>
+	<li id="nav-videos">Videos</li>
+			<li id="nav-bio">Bio</li>
 		<li id="nav-contact">Contact</li>
 	</ul>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -35,7 +36,8 @@
 	<script src="js/main.js"></script>
 	<script>
 		$(window).bind('load', function() {
-			$('#first-name, #last-name').textresizer({width:$('#title-text').width()});
+			$('#last-name').textresizer({width:$('#title-text').width()/2});
+			$('#first-name').textresizer({width:$('#title-text').width()/2});
 		})
 	</script>
 </body>
