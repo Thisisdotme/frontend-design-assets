@@ -1,10 +1,10 @@
 <html>
 <head>
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-touch-fullscreen" content="yes" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<link rel="stylesheet" href="css/style.css" media="all">
-	<script>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-touch-fullscreen" content="yes"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" href="css/style.css" media="all">
+<script>
 	window.addEventListener("load",function() {
 	   setTimeout(function(){
 	    window.scrollTo(0, 0);
@@ -13,32 +13,59 @@
 	</script>
 </head>
 <body>
-	<a id="menu-button">Menu</a>
-	<div id="cover">
-		<header id="title-text">
-			<span id="first-name">MC</span>
-			<span id="last-name">Hammer</span>
-			<span id="date">April 2012</span>
-		</header>
-		<div id="content">
-			<p id="pullquote">My friend&#8217;s sons are putting on a benefit concert for Trevor Project June 23rd in SF - great cause, fun event: <a href="#">http://bit.ly/a69sg6</a></p>
-		</div>
-	</div>
-	<ul id="nav">
-		<li id="nav-news">News</li>
-		<li id="nav-photos">Photos</li>
+<a id="nav-toggle">Menu</a>
+<div id="cover">
+</div>
+<header>
+<span id="first-name">MC</h1>
+<span id="last-name">Hammer</h1>
+</header>
+<section>
+<p class="pullquote">
+	 My friend&#8217;s sons are putting on a benefit concert for Trevor Project June 23rd in SF - great cause, fun event: <a href="#">http://bit.ly/a69sg6</a>
+</p>
+</section>
+<nav>
+<ul>
+	<li id="nav-news">News</li>
+	<li id="nav-photos">Photos</li>
 	<li id="nav-videos">Videos</li>
-			<li id="nav-bio">Bio</li>
-		<li id="nav-contact">Contact</li>
-	</ul>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="js/jquery.resizer.js"></script>
-	<script src="js/main.js"></script>
-	<script>
-		$(window).bind('load', function() {
-			$('#last-name').textresizer({width:$('#title-text').width()/2});
-			$('#first-name').textresizer({width:$('#title-text').width()/2});
-		})
+	<li id="nav-bio">Bio</li>
+	<li id="nav-bio">Cover</li>
+	
+	<li id="nav-signup">Sign Up</li>
+</ul>
+</nav>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script type="text/javascript">
+		$("#first-name").fitText(.3);
+		$("#last-name").fitText(.5);
+	 $(document).ready(function(){
+	 var imgArr = new Array( // relative paths of images
+	 			'http://expensiva.com/wp-content/uploads/nothq/2010/11/01/mc-hammer-launches-xbox-karaoke-title/mc-hammer-launches-xbox-karaoke-title-06.jpg',
+	 'http://rahancoc.files.wordpress.com/2011/10/mc_hammer_-_greatest_hits_front-1.jpg',
+	 'http://4.bp.blogspot.com/_1OEF22m34-A/S7prFPznN9I/AAAAAAAAACs/jeflak3FI_I/s1600/Hammer+1.jpg',
+	 'http://cps-static.rovicorp.com/3/JPG_1080/MI0001/407/MI0001407105.jpg?partner=allrovi.com'
+	 );
+	 var preloadArr = new Array();
+	 var i;
+	 /* preload images */
+	 for(i=0; i < imgArr.length; i++){
+	 preloadArr[i] = new Image();
+	 preloadArr[i].src = imgArr[i];
+	 }
+	 var currImg = 1;
+	 var intID = setInterval(changeImg, 6000);
+	 /* image rotator */
+	 function changeImg() {
+	 $('#cover').animate({opacity: 0}, 300, function(){
+	 $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat').css({'top':'-10%', 'width':'110%'});
+	 }).animate({opacity: 1}, 300);
+	 $('#cover').animate({'width': '150%', 'height':'120%'}, 5000);
+	 }
+	 });
 	</script>
 </body>
 </html>

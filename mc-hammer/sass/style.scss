@@ -1,7 +1,4 @@
-@font-face {
-	font-family:'CenturySchoolbook';
-	src:url('../fonts/centuryschoolbook.otf') format('opentype');
-}
+$menu-red:#bc101a;
 @font-face {
 	font-family:'Chunkfive';
 	src:url('../fonts/chunkfive.otf') format('opentype');
@@ -20,10 +17,9 @@
 		/*temp*/
 		color:#fff;
 		min-height:418px;
-		font-size:10px;
 	}
-	#menu-button {
-		background:url(../img/logo.svg) no-repeat;
+	#nav-toggle {
+		background:url(/img/logo.svg) no-repeat;
 		background-size:contain;
 		display:block;
 		width:50px;
@@ -33,7 +29,7 @@
 		position:absolute;
 		top:5px;
 		right:5px;
-		z-index:2;
+		z-index:3;
 		/*more performant approach to hiding text?*/
 		line-height:0;
 		font-size:0;
@@ -46,138 +42,147 @@
 		-webkit-tap-highlight-color:transparent;
 		/* "turn off" link highlight */
 	}
-	#menu-button:active {
+	.nav-open #nav-toggle {
+		background:url(/img/nav/logo-active.svg) no-repeat;
+	}	
+	nav {
+		ul {
+			padding:0;
+			margin:0;
+			background-color:rgba(191,30,40,1);
+			width:0px;
+			height:100%;
+			/*test*/
+			position:absolute;
+			top:0;
+			right:0px;
+			z-index:2;
+			box-sizing:border-box;
+			-webkit-transition:width .3s cubic-bezier(.49,.22,.5,.88);
+			box-shadow:-5px 0px 5px rgba(0,0,0,.2);
+			overflow:hidden;
+			color:#fff;
+			li {
+				display:block;
+				text-align:center;
+				margin:0;
+				margin-bottom:5px;
+				font-size:10px;
+				font-family:Helvetica,sans-serif;
+				font-weight:bold;
+				padding:0;
+				/*padding-top:28px;
+				*/
+				height:46px;
+				vertical-align:text-bottom;
+				line-height:74px;
+				width:46px;
+				margin-left:8px;
+				margin-right:8px;
+				border-radius:6px;
+			}
+			li:active {
+				background-color:rgba(0,0,0,.05);
+				box-shadow:0 1px 2px rgba(0,0,0,.3) inset;
+			}
+			li:first-child {
+				margin-top:70px;
+			}
+		}
+		.nav-open nav {
+			width:62px;
+		}
+		#nav-news {
+			margin-top:6px;
+			background:url(/img/nav/timeline.svg) no-repeat center 4px;
+		}
+		#nav-photos {
+			margin-top:3px;
+			background:url(/img/nav/photos.svg) no-repeat center 6px;
+		}
+		#nav-bio {
+			margin-top:4px;
+			background:url(/img/nav/bio.svg) no-repeat center 8px;
+		}
+		#nav-cover {
+			background:url(/img/nav/cover.svg) no-repeat center 5px;
+		}
+		#nav-cover.active {
+			background:url(/img/nav/cover-active.svg) no-repeat center 5px;
+		}
+		#nav-signin {
+			margin-top:4px;
+			background:url(/img/nav/sign-in.svg) no-repeat center 6px;
+		}
+		#nav-signup {
+			margin-top:45px !important;
+			background: url(/img/nav/sign-up.svg) no-repeat center 4px;
+		}
 	}
 	#cover {
-		width:100%;
-		height:100%;
+		width:110%;
+		height:110%;
 		background:#ccc;
 		background:-webkit-linear-gradient(top,#ddd 0%,#aaa 100%);
 		/* Chrome10+,Safari5.*/
 		/*test*/
 		position:absolute;
-		top:0;
-		left:0;
-		z-index:1;
+		top:-10%;
+		left:-10%;
+		z-index:0;
 		/*needs to be in the html*/
 		background:url(../img/portrait_full_sm.png) no-repeat center center;
-		background-color:#ccc;
+		background-color:#000;
 		background-size:cover;
 		/*need faux shadow on right side?*/
 		box-shadow:10px 0px 10px rgba(0,0,0,.3);
 		/*transitions*/
 		-webkit-transition:left .3s cubic-bezier(.54,.16,.57,.88);
 	}
-	#cover.active {
-		left:-62px;
-	}
-	#title-text {
-		width:95%;
-		margin:10px auto;
+	header {
+		width:80%;
 		display:block;
 		padding:0;
-		#date {
-			font-family:Helvetica,sans-serif;
-			font-weight:200;
-			color:#fff;
-			font-size:18px;
-			text-align: right;
+		margin:10%;
+		position:absolute;
+		top:0;
+		left:0;
+		span {
+			display:block;
+			text-align:left;
+			font-family:'Chunkfive';
+			white-space: nowrap;
 		}
 		#first-name {
-			opacity:0;
-			font-family:'Chunkfive';
-			font-size:12px;
-			text-align:center;
-			margin:0 auto;
-			line-height:1.1;
 			text-shadow:0 2px 4px rgba(0,0,0,.5);
-			white-space:nowrap;
-			z-index:1;
-			position:absolute;
+			z-index:2;
 			-webkit-text-fill-color:yellow;
 			/* Will override color (regardless of order) */
-			-webkit-text-stroke-width:1px;
-			-webkit-text-stroke-color:black;
+			-webkit-text-stroke:2px black;
+			line-height:30%;
+			margin-top:15%;
 		}
 		#last-name {
-			opacity:0;
-			display:block;
-			position:relative;
-			left:12%;
-			padding-top:18%;
-			font-family:'Chunkfive';
-			font-size:12px;
-			text-align:left;
-			margin:0 auto;
-			line-height:1.1;
-			white-space:nowrap;
-			z-index:2;
+			z-index:3;
 			text-shadow:5px 5px 14px rgba(0,0,0,.5);
 			-webkit-text-fill-color:white;
 			/* Will override color (regardless of order) */
-			-webkit-text-stroke-width:2px;
-			-webkit-text-stroke-color:black;
-		}
-		#first-name.resized,#last-name.resized {
-			opacity: 1;
+			-webkit-text-stroke:2px black;
+			margin-left:15%;
 		}
 	}
-	#nav {
-		padding:0;
-		margin:0;
-		background-color:#bc101a;
-		width:62px;
-		height:100%;
-		/*test*/
-		position:absolute;
-		top:0;
-		right:0;
-		z-index:0;
-		padding-top:80px;
-		box-sizing:border-box;
-		li {
-			display:block;
-			text-align:center;
-			margin:0;
-			margin-bottom:15px;
-			font-size:10px;
-			font-family:Helvetica,sans-serif;
-			font-weight:bold;
-			padding:0;
-			padding-top:28px;
-			width:62px;
-		}
-		#nav-news {
-			background:url(../img/timeline.svg) no-repeat center top;
-		}
-		#nav-photos {
-			background:url(../img/photos.svg) no-repeat center top;
-		}
-		#nav-videos {
-			background:url(../img/videos.svg) no-repeat center 2px;
-		}
-		#nav-bio {
-			background:url(../img/bio.svg) no-repeat center 2px;
-		}
-		#nav-contact {
-			background: url(../img/contact.svg) no-repeat center 2px;
-		}
-	}
-	#content {
+	section {
 		/*test*/
 		position:absolute;
 		width:100%;
 		left:0;
 		bottom:0;
 	}
-	#pullquote,#links {
-		padding:5px 10px;
-	}
-	#pullquote {
+	.pullquote {
 		display:block;
 		margin-bottom:10px;
-		font-size:20px;
-		font-family:'CenturySchoolbook';
+		font-size:22px;
+		font-family:'Helvetica Neue';
 		font-weight:bold;
 		text-shadow:0 1px 3px rgba(0,0,0,.5);
 		margin-bottom:30px;
@@ -185,65 +190,28 @@
 		line-height:1.2;
 		a {
 			color:#FFCE78;
-			text-decoration: none;
+			text-decoration:none;
 		}
-	}
-	#links {
-		font-size:11px;
-		text-transform:uppercase;
-		font-family:Helvetica,sans-serif;
-		font-weight:bold;
-		box-sizing:border-box;
-		margin:0;
-		width:100%;
-		background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAIAAhQCBx/kPfQAAAABJRU5ErkJggg==);
-		/*replace with image*/
-		border-top:1px solid rgba(40,40,40,.4);
-		/*clearfix*/
-		display:inline-table;
-		a {
-			color:#ca0016;
-		}
-	}
-	#link-left,#link-right {
-		width:47%;
-	}
-	#link-left {
-		float:left;
-	}
-	#link-right {
-		float:right;
 	}
 }
+@media (min-width:1024px) {
+}
 @media (min-width:768px) {
-	#title {
-		background:url(../img/clint-eastwood-tablet.png) no-repeat;
-		width:640px;
-		height:274px;
-		margin:10px auto;
-		position:relative;
-		#date {
-			position:absolute;
-			bottom:0;
-		}
-	}
-	#title-text {
+	header {
 		margin-top:20px;
-		width:70%;
+		width:100%;
 	}
 	#date {
 		margin-top:20px;
 	}
-	#first-name,#last-name {
-		line-height:1.1;
-	}
 	#cover {
-		background:url(../img/portrait_full.jpg) no-repeat center center;
+		/* background:url(../img/portrait_full.jpg) no-repeat center center;
+		*/
 	}
-	#pullquote,#links {
+	.pullquote,#links {
 		padding:10px 20px;
 	}
-	#pullquote {
+	.pullquote {
 		font-size:48px;
 		width:60%;
 		margin-bottom:20px;

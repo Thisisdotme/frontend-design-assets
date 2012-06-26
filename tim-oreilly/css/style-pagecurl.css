@@ -15,14 +15,14 @@
 	body {
 		margin:0; 
 		padding:0;
-		height: 416px;
-		overflow: hidden;
+		height: 100%;
 		position: relative;
 		width:100%;
 		/*temp*/
 		color:#fff;
 		min-height: 418px;
 		font-size:10px;
+		background:#c00;
 	}
 
 	a {
@@ -42,7 +42,7 @@
 		position: absolute;
 		top:5px;
 		right:5px;
-		z-index:3;
+		z-index:1;
 
 		/*more performant approach to hiding text?*/
 		line-height:0; 
@@ -153,25 +153,19 @@
 	}
 
 	#nav {
-		padding:0;
-		margin:0;
-		background-color:rgba(0,0,0,.8);
-		width:62px;
-		height:0;
+		
 
 		/*test*/
 		position: absolute;
 		top:0;
-		right:0;
-		z-index:2;
+		left:0;
+		z-index:0;
 		box-sizing:border-box;
 		-webkit-transition: height .3s cubic-bezier(.54, .16, .57, .88);
 		overflow: hidden;
+		width:320px;
 	}
 
-	#nav.active {
-		height:100%;
-	}
 
 	#nav li {
 		display:block;
@@ -183,7 +177,6 @@
 		font-weight:bold;
 		padding:0;
 		padding-top:28px;
-		width:62px;
 	}
 
 	#nav li:first-child {
@@ -316,3 +309,204 @@
 		padding:20px;
 	}
 }
+
+
+
+
+
+/*
+----------------------------------------------------
+PAGE CURL
+----------------------------------------------------
+
+Sample HTML:
+-----------------------------
+
+<div id="all">
+	<div id="page-flip">
+		<div id="r1"><div id="p1"><div><div></div></div></div></div>
+		<div id="p2"><div></div></div>
+		<div id="r3"><div id="p3"><div><div></div></div></div></div>
+		<div class="s"><div id="s3"><div id="sp3"></div></div></div>
+		<div class="s" id="s4"><div id="s2"><div id="sp2"></div></div></div>
+		<a id="coke" href="http://www.romancortes.com/blog/pure-css-coke-can/" title="Pure CSS Coke Can"></a>
+		<a id="meninas" href="http://www.romancortes.com/blog/css-3d-meninas/" title="CSS 3D Meninas"></a>
+	</div>
+</div>
+*/
+
+
+#r1
+{
+	position: absolute;
+	z-index: 2;
+	-webkit-transform-origin: 1315px 500px;
+	-webkit-transform: translate(-1030px, -500px) rotate(-32deg);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+}
+#p1
+{
+	width: 1285px;
+	height: 1388px;
+	overflow: hidden;
+}
+
+#p1 > div
+{
+	-webkit-transform-origin: 285px 0;
+	-webkit-transform: translate(1030px, 500px) rotate(32deg);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+	width: 320px;
+	height: 416px;
+}
+#p1 > div > div
+{
+	width: 10px;
+	height: 388px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .25)), to(rgba(0,0,0,0)));
+}
+
+#p2 > div
+{
+	width: 320px;
+	height: 416px;
+	position: absolute;
+	z-index: 1;
+}
+#r3
+{
+	-webkit-transform-origin: 1315px 500px;
+	-webkit-transform: translate(-1030px, -500px) rotate(-32deg);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+	position: absolute;
+	z-index: 2;
+}
+
+#s3
+{
+	-webkit-transform-origin: 70px 500px;
+	-webkit-transform: translate(215px, -500px) rotate(-32deg) translate(40px, 0);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+	position: absolute;
+	z-index: 1;
+}
+
+#sp3
+{
+	width: 25px;
+	height: 1000px;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .25)), to(rgba(0,0,0,0)));
+	-webkit-transition-property: width;
+	-webkit-transition-duration: 1s;
+	overflow: hidden;
+}
+
+.s
+{
+	width: 320px;
+	height: 416px;
+	position: absolute;
+	overflow: hidden;
+	z-index: 3;
+}
+#s2
+{
+	-webkit-transform-origin: 45px 500px;
+	-webkit-transform: translate(240px, -500px) rotate(-32deg);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+	position: absolute;
+}
+
+#p2 {
+	
+}
+
+#sp2
+{
+	width: 15px;
+	height: 1000px;
+	background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, .18)), to(rgba(0,0,0,0)));
+	overflow: hidden;
+
+}
+#s4
+{
+	opacity: 1;
+	-webkit-transition-duration: 0.5s;
+
+}
+
+#p3
+{
+	width: 1285px;
+	height: 1388px;
+	overflow: hidden;
+}
+#p3 > div
+{
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: translate(1255px, 500px) rotate(-32deg);
+	-webkit-transition-property: -webkit-transform, -webkit-transform-origin;
+	-webkit-transition-duration: 1s;
+	-webkit-box-shadow: 0 0 11px rgba(0, 0, 0, .5);
+	width: 320px;
+	height: 416px;
+	background:#efefef;
+	overflow: hidden;
+}
+#p3 > div > div
+{
+	width: 9px;
+	height: 500px;
+	float: right;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0,0,0,.20)));
+}
+
+
+body.active #r1
+{
+	-webkit-transform-origin: 1570px 500px;
+	-webkit-transform: translate(-1285px, -500px) rotate(0deg);
+}
+body.active #p1 > div
+{
+	-webkit-transform-origin: 285px 0;
+	-webkit-transform: translate(1285px, 500px) rotate(0deg);
+}
+body.active #r3
+{
+	-webkit-transform-origin: 1570px 500px;
+	-webkit-transform: translate(-1285px, -500px) rotate(0deg);
+}
+body.active #p3 > div
+{
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: translate(1000px, 500px) rotate(0deg);
+}
+
+body.active #s3
+{
+	-webkit-transform-origin: 325px 500px;
+	-webkit-transform: translate(-40px, -500px) rotate(0deg) translate(40px, 0);
+}
+
+body.active #sp3
+{
+	width: 11px;
+}
+
+body.active #s4
+{
+	opacity: 0;
+}
+body.active #s2
+{
+	-webkit-transform-origin: 300px 500px;
+	-webkit-transform: translate(-15px, -500px) rotate(0deg);
+}
+
