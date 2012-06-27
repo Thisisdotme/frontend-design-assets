@@ -4,13 +4,6 @@
 <meta name="apple-touch-fullscreen" content="yes"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <link rel="stylesheet" href="css/style.css" media="all">
-<script>
-	window.addEventListener("load",function() {
-	   setTimeout(function(){
-	    window.scrollTo(0, 0);
-	    }, 0);
-	 });
-	</script>
 </head>
 <body>
 <a id="nav-toggle">Menu</a>
@@ -22,7 +15,11 @@
 </header>
 <section>
 <p class="pullquote">
-	 My friend&#8217;s sons are putting on a benefit concert for Trevor Project June 23rd in SF - great cause, fun event: <a href="#">http://bit.ly/a69sg6</a>
+	<a href="http://t.co/TeKbu4ZZ">VIDEO:</a><br /> 
+	Guess what happens when you test your lighter at the gas pump
+</p>
+<p class="pullquote">
+	<a href="http://instagr.am/p/MUlVOMnUPf/">We return to the Historic Tonga Room</a><br /> Ron Conway, Mayor Lee but tonight we celebrate...
 </p>
 </section>
 <nav>
@@ -31,41 +28,22 @@
 	<li id="nav-photos">Photos</li>
 	<li id="nav-videos">Videos</li>
 	<li id="nav-bio">Bio</li>
-	<li id="nav-bio">Cover</li>
+	<li id="nav-cover">Cover</li>
 	
 	<li id="nav-signup">Sign Up</li>
 </ul>
 </nav>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="js/main.js"></script>
 <script src="js/jquery.fittext.js"></script>
 <script type="text/javascript">
-		$("#first-name").fitText(.3);
+		window.addEventListener("load",function() {
+		   setTimeout(function(){
+		    window.scrollTo(0, 0);
+		    }, 0);
+		 });
+		$("#first-name").fitText(.4);
 		$("#last-name").fitText(.5);
-	 $(document).ready(function(){
-	 var imgArr = new Array( // relative paths of images
-	 			'http://expensiva.com/wp-content/uploads/nothq/2010/11/01/mc-hammer-launches-xbox-karaoke-title/mc-hammer-launches-xbox-karaoke-title-06.jpg',
-	 'http://rahancoc.files.wordpress.com/2011/10/mc_hammer_-_greatest_hits_front-1.jpg',
-	 'http://4.bp.blogspot.com/_1OEF22m34-A/S7prFPznN9I/AAAAAAAAACs/jeflak3FI_I/s1600/Hammer+1.jpg',
-	 'http://cps-static.rovicorp.com/3/JPG_1080/MI0001/407/MI0001407105.jpg?partner=allrovi.com'
-	 );
-	 var preloadArr = new Array();
-	 var i;
-	 /* preload images */
-	 for(i=0; i < imgArr.length; i++){
-	 preloadArr[i] = new Image();
-	 preloadArr[i].src = imgArr[i];
-	 }
-	 var currImg = 1;
-	 var intID = setInterval(changeImg, 6000);
-	 /* image rotator */
-	 function changeImg() {
-	 $('#cover').animate({opacity: 0}, 300, function(){
-	 $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat').css({'top':'-10%', 'width':'110%'});
-	 }).animate({opacity: 1}, 300);
-	 $('#cover').animate({'width': '150%', 'height':'120%'}, 5000);
-	 }
-	 });
+		$("#nav-toggle").click(function(){$("body").toggleClass("nav-open")});
 	</script>
 </body>
 </html>
