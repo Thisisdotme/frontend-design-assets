@@ -150,7 +150,7 @@ $menu-red:#bc101a;
 		0%   {width:120%;}
 		100% {width:100%;}
 	}
-	header {
+	.cover_page header {
 		width:100%;
 		display:block;
 		padding:0;
@@ -183,7 +183,7 @@ $menu-red:#bc101a;
 			padding-left:10%;
 		}
 	}
-	section {
+	.cover_page section {
 		/*test*/
 		position:absolute;
 		width:100%;
